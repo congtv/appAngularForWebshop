@@ -12,16 +12,11 @@ import 'rxjs/add/operator/toPromise';
 export class ProductCategoryService {
 
   constructor(private http: HttpClient) { }
-  readonly url = `http://localhost:5254/Api/ProductCategory`;
-  headers = new HttpHeaders({'Content-Type':'application/json; charset=utf-8'});
-  public getAll(){
-    console.log(this.url);
-    console.log(this.headers)
-    var x =  this.http.get<string>('assets/config.json');
-    return x;
+  readonly rootUrl = 'http://localhost:5254/';
+  headers = new HttpHeaders({'Content-Type': 'application/json; charset=utf-8'});
+  public getAll(): Observable<ProductCategory[]> {
+    return this.http.get<ProductCategory[]>(this.rootUrl + 'api/productcategory', { headers: this.headers}).pipe(
+      catchError(err => of([]))
+    );
   }
-  // productCategory: ProductCategory[];
-  // getAll(){
-  //   return this.http.get(this.url);
-  // }
 }

@@ -8,13 +8,18 @@ import {ProductCategory} from './../../models/product-category';
   styleUrls: ['./product-category.component.css']
 })
 export class ProductCategoryComponent implements OnInit {
-
   constructor(public service: ProductCategoryService) { }
 
+  listProductCategory: ProductCategory[];
   ngOnInit() {
-    
+    this.getAllData();
   }
-  getAllData():void{
-    var x = this.service.getAll();
+  getAllData(): void {
+    this.service.getAll().subscribe(
+      data => {
+        this.listProductCategory = data;
+        console.log(this.listProductCategory);
+      },
+      err => console.error(err));
   }
 }

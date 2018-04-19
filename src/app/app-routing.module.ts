@@ -19,8 +19,8 @@ const routes: Routes = [
   { path: 'product/add', component: ProductAddComponent },
   { path: 'product/edit/:id', component: ProductEditComponent },
   { path: 'product-category', component: ProductCategoryComponent },
-  { path: 'product-category/add', component: ProductCategoryAddComponent },
-  { path: 'product-category/edit/:id', component: ProductCategoryEditComponent },
+  { path: 'add-pc', component: ProductCategoryAddComponent },
+  { path: 'edit-pc/:id', component: ProductCategoryEditComponent },
   { path: 'order', component: OrderComponent },
   { path: 'menu', component: MenuComponent }
 ];

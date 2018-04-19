@@ -10,7 +10,7 @@
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div class="card">
               <div class="header">
-                  <a routerLink="add" class="btn btn-success  waves-effect">
+                  <a routerLink="/add-pc" class="btn btn-success  waves-effect">
                     <i class="material-icons">add</i>
                     <span class="icon-name">Thêm</span>
                   </a>
@@ -22,45 +22,27 @@
                   
               </div>
               <div class="body table-responsive">
-                  <table class="table table-bordered ">
+                  <table class="table table-bordered">
                       <thead>
                           <tr>
-                              <th>#</th>
-                              <th>FIRST NAME</th>
-                              <th>LAST NAME</th>
-                              <th>USERNAME</th>
+                              <th width="10%">ID</th>
+                              <th width="30%">Name</th>
+                              <th width="20%">Create Date</th>
+                              <th width="20%">Status</th>
+                              <th width="20%">#</th>
                           </tr>
                       </thead>
                       <tbody>
-                          <tr>
-                              <th scope="row">1</th>
-                              <td>Mark</td>
-                              <td>Otto</td>
-                              <td>@mdo</td>
-                          </tr>
-                          <tr>
-                              <th scope="row">2</th>
-                              <td>Jacob</td>
-                              <td>Thornton</td>
-                              <td>@fat</td>
-                          </tr>
-                          <tr>
-                              <th scope="row">3</th>
-                              <td>Larry</td>
-                              <td>the Bird</td>
-                              <td>@twitter</td>
-                          </tr>
-                          <tr>
-                              <th scope="row">4</th>
-                              <td>Larry</td>
-                              <td>Jellybean</td>
-                              <td>@lajelly</td>
-                          </tr>
-                          <tr>
-                              <th scope="row">5</th>
-                              <td>Larry</td>
-                              <td>Kikat</td>
-                              <td>@lakitkat</td>
+                          <tr *ngFor="let productCategory of listProductCategory">
+                              <th>{{productCategory.ID}}</th>
+                              <td>{{productCategory.Name}}</td>
+                              <td>{{productCategory.CreatedDate}}</td>
+                              <td>{{productCategory.Status}}</td>
+                              <td>
+                                  <a type="button" routerLink="/edit-pc/{{productCategory.ID}}" class="btn btn-success  waves-effect"><i class="material-icons">create</i><span class="icon-name"> Edit</span></a>
+                                  <a type="button" routerLink="/detail-pc/{{productCategory.ID}}" class="btn btn-info waves-effect"><i class="material-icons">content_paste</i><span class="icon-name"> Detail</span></a>
+                                  <a type="button" routerLink="/delete-pc/{{productCategory.ID}}"  class="btn btn-danger  waves-effect"><i class="material-icons">delete</i><span class="icon-name"> Delete</span></a>
+                              </td>
                           </tr>
                       </tbody>
                   </table>
