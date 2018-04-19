@@ -1,0 +1,15 @@
+div.searchCommand{
+    float: right;
+}
+input.search{
+    padding: 7px 10px;
+    float: right;
+    width: 33%;
+    margin-right: 5px;
+}
+button.search{
+    float: right;
+}
+nav{
+    float: right;
+}
