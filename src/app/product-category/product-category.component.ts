@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductCategoryService } from './../services/product-category.service';
-import {ProductCategory} from './../../models/product-category';
+import { ProductCategory } from './../../models/product-category';
 
 @Component({
   selector: 'app-product-category',
@@ -11,6 +11,7 @@ export class ProductCategoryComponent implements OnInit {
   constructor(public service: ProductCategoryService) { }
 
   listProductCategory: ProductCategory[];
+  selectedProductCategory: ProductCategory;
   ngOnInit() {
     this.getAllData();
   }
@@ -18,8 +19,11 @@ export class ProductCategoryComponent implements OnInit {
     this.service.getAll().subscribe(
       data => {
         this.listProductCategory = data;
-        console.log(this.listProductCategory);
+        this.selectedProductCategory = this.listProductCategory[0];
       },
       err => console.error(err));
+  }
+  selectEditPC(productCategory: ProductCategory): void {
+    this.selectedProductCategory = productCategory;
   }
 }

@@ -6,6 +6,9 @@ import { RouterLink } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ModalModule } from 'ngx-bootstrap/modal';
+
+// Filter
+import { StatusFilter } from './filter/status-filter';
 // Service
 import { ProductCategoryService } from './services/product-category.service';
 
@@ -13,7 +16,7 @@ import { ProductCategoryService } from './services/product-category.service';
 import { AppComponent } from './app.component';
 import { ProductCategoryComponent } from './product-category/product-category.component';
 import { ProductComponent } from './product/product.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { OrderComponent } from './order/order.component';
 import { MenuComponent } from './menu/menu.component';
@@ -34,9 +37,11 @@ import { ProductCategoryEditComponent } from './product-category/product-categor
     ProductEditComponent,
     ProductAddComponent,
     ProductCategoryAddComponent,
-    ProductCategoryEditComponent
+    ProductCategoryEditComponent,
+    StatusFilter
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
