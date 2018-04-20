@@ -15,7 +15,7 @@ export class ProductCategoryService {
   readonly rootUrl = 'http://localhost:5254/';
   headers = new HttpHeaders({'Content-Type': 'application/json; charset=utf-8'});
   public getAll(): Observable<ProductCategory[]> {
-    return this.http.get<ProductCategory[]>(this.rootUrl + 'api/productcategory', { headers: this.headers}).pipe(
+    return this.http.get<ProductCategory[]>(this.rootUrl + 'api/productcategory/getall', { headers: this.headers}).pipe(
       catchError(err => of([]))
     );
   }

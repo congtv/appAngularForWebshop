@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { ModalModule } from 'ngx-bootstrap/modal';
 // Service
 import { ProductCategoryService } from './services/product-category.service';
 
@@ -39,7 +40,8 @@ import { ProductCategoryEditComponent } from './product-category/product-categor
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    ModalModule.forRoot()
   ],
   providers: [
     ProductCategoryService
