@@ -1,5 +1,5 @@
 export class ProductCategory {
-    Id: number;
+    ID: number;
     Name: string;
     Alias: string;
     Description: string;

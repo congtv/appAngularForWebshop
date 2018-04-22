@@ -2,27 +2,25 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ProductComponent } from './product/product.component';
-import { ProductAddComponent } from './product/product-add/product-add.component';
-import { ProductEditComponent } from './product/product-edit/product-edit.component';
-import { ProductCategoryComponent } from './product-category/product-category.component';
-import { ProductCategoryAddComponent } from './product-category/product-category-add/product-category-add.component';
-import { ProductCategoryEditComponent } from './product-category/product-category-edit/product-category-edit.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { OrderComponent } from './order/order.component';
-import { MenuComponent } from './menu/menu.component';
+import { ProductComponent } from './admin/product/product.component';
+import { ProductAddComponent } from './admin/product/product-add/product-add.component';
+import { ProductEditComponent } from './admin/product/product-edit/product-edit.component';
+import { ProductCategoryComponent } from './admin/product-category/product-category.component';
+import { ProductCategoryAddComponent } from './admin/product-category/product-category-add/product-category-add.component';
+import { ProductCategoryEditComponent } from './admin/product-category/product-category-edit/product-category-edit.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { OrderComponent } from './admin/order/order.component';
+import { MenuComponent } from './admin/menu/menu.component';
+
+import { ClientComponent } from './client/client.component';
+import { AdminComponent } from './admin/admin.component';
+import { NotFoundComponent } from './shared/component/not-found/not-found.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'product', component: ProductComponent },
-  { path: 'product/add', component: ProductAddComponent },
-  { path: 'product/edit/:id', component: ProductEditComponent },
-  { path: 'product-category', component: ProductCategoryComponent },
-  { path: 'add-pc', component: ProductCategoryAddComponent },
-  { path: 'edit-pc/:id', component: ProductCategoryEditComponent },
-  { path: 'order', component: OrderComponent },
-  { path: 'menu', component: MenuComponent }
+  { path: '', component: ClientComponent },
+  { path: 'administrator', loadChildren: './admin/admin.module#AdminModule'},
+  { path: '**', component: NotFoundComponent }
+
 ];
 
 @NgModule({

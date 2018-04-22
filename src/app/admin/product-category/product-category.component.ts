@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductCategoryService } from './../services/product-category.service';
-import { ProductCategory } from './../../models/product-category';
+import { ProductCategoryService } from './../../shared/services/product-category.service';
+import { ProductCategory } from './../../shared/models/product-category';
 
 @Component({
   selector: 'app-product-category',
@@ -19,6 +19,7 @@ export class ProductCategoryComponent implements OnInit {
     this.service.getAll().subscribe(
       data => {
         this.listProductCategory = data;
+        console.log(data);
         this.selectedProductCategory = this.listProductCategory[0];
       },
       err => console.error(err));

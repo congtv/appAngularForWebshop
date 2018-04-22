@@ -42,7 +42,7 @@
                             <td>{{productCategory.Name}}</td>
                             <td>{{productCategory.CreatedDate}}</td>
                             <td align="center">
-                                <button style="width: 78px;" type="button" class="btn waves-effect" [ngClass]="{'btn-danger':productCategory.Status == false, 
+                                <button style="width: 78px;" type="button" class="btn waves-effect" [ngClass]="{'btn-danger':productCategory.Status == false,
                                     'btn-info':productCategory.Status == true}">
                                     {{productCategory.Status | statusFilter}}</button>
                             </td>
@@ -66,7 +66,7 @@
 </div>
 
 <div bsModal #addModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-sizes-name1">
-    <div *ngIf="productCategory" class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 id="dialog-sizes-name1" class="modal-title pull-left">Thêm mới danh mục sản phẩm</h4>
